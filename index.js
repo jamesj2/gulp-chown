@@ -8,8 +8,8 @@ var cachedGid;
 
 module.exports = function (user, group) {
 	var firstFile = true;
-	var finalUid = typeof cachedUid === 'number' ? cachedUid : typeof user === 'number' ? user : null;
-	var finalGid = typeof cachedGid === 'number' ? cachedGid : typeof group === 'number' ? group : null;
+	var finalUid = typeof cachedUid === 'number' ? cachedUid : typeof user === 'string' ? user : null;
+	var finalGid = typeof cachedGid === 'number' ? cachedGid : typeof group === 'string' ? group : null;
 
 	return through.obj(function (file, enc, cb) {
 		if (file.isNull()) {
